@@ -12,11 +12,11 @@ def lambda_handler(event, context):
 
     # Pega o código do erro
     error_code = event.get("detail", {}).get("errorCode")
-    print(f"error_code: {errorCode}")
+    print(f"error_code: {error_code}")
 
     # Pega a mensagem de erro
     error_message = event.get("detail", {}).get("errorMessage")
-    print(f"error_message: {errorMessage}")
+    print(f"error_message: {error_message}")
 
     # Informa o microsserviço que o job falhou
     print("Enviando notificação ao servidor sobre a falha do job...")
