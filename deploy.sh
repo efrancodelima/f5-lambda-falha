@@ -1,7 +1,6 @@
 #!/bin/bash
 
 LAMBDA_NAME="lambda-falha"
-# LAMBDA_ROLE = secret do github
 ZIP_FILE="lambda_function.zip"
 SRC_FILE="src/lambda_function.py"
 
@@ -25,8 +24,7 @@ if [ -z "$EXISTS" ]; then
     echo "Criando nova função Lambda..."
     aws lambda create-function \
         --function-name $LAMBDA_NAME \
-        --runtime python3.9 \
-        --role $LAMBDA_ROLE \
+        --runtime python3.13 \
         --handler lambda.lambda_handler \
         --zip-file fileb://$ZIP_FILE \
         >/dev/null 2>&1
