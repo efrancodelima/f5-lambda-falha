@@ -23,8 +23,8 @@ def lambda_handler(event, context):
     service_url = "http://44.204.140.237:8080/video/falha"
     data = {
         "jobId": job_id,
-        "error_code": error_code,
-        "error_message": error_message
+        "errorCode": error_code,
+        "errorMessage": error_message
     }
     json_data = json.dumps(data).encode('utf-8')
     request = urllib.request.Request(service_url, data=json_data, method="PATCH")
