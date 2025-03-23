@@ -3,6 +3,7 @@
 LAMBDA_NAME="lambda-falha"
 ZIP_FILE="lambda_function.zip"
 SRC_FILE="src/lambda_function.py"
+TIMEOUT="5" # em segundos
 
 echo "Script iniciado."
 
@@ -27,6 +28,7 @@ if [ -z "$EXISTS" ]; then
         --runtime python3.13 \
         --handler lambda.lambda_handler \
         --zip-file fileb://$ZIP_FILE \
+        --timeout $TIMEOUT \
         >/dev/null 2>&1
 
     echo "Função Lambda criada com sucesso!"
