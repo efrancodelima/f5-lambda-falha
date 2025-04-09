@@ -20,7 +20,7 @@ def lambda_handler(event, context):
 
     # Informa o microsserviço que o job falhou
     print("Enviando notificação ao servidor sobre a falha do job...")
-    service_url = "http://44.204.140.237:8080/video/falha"
+    service_url = "http://35.170.50.15:8080/video/falha"
     data = {
         "jobId": job_id,
         "errorCode": error_code,
